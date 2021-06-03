@@ -41,9 +41,10 @@ while True:
     if not nextPageToken:
         break
 
-totLen = gethms(sum(vid_len))
+totLen_sec = sum(vid_len)
+totLen_hms = gethms(totLen_sec)
 
+print(totLen_hms)
+print(faster(totLen_sec, 1.25))
 
-print(totLen)
-print(faster(totLen, 1.25))
 youtubeService.close()

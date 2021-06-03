@@ -5,9 +5,7 @@ def parseYTstring(vid):
     minutes_pattern = re.compile(r'(\d+)M')
     hours_pattern = re.compile(r'(\d+)H')
 
-    h = 0
-    m = 0
-    s = 0
+    h = 0, m = 0, s = 0
 
     if seconds_pattern.search(vid):
         s = seconds_pattern.search(vid).group(1) 
@@ -25,9 +23,9 @@ def parseYTstring(vid):
            }
 
 
-
 def getSeconds(h, m, s):
     return h * 60 * 60 + m * 60 + s
+
 
 def gethms(totalSeconds):
     temp = totalSeconds / (60 * 60)
@@ -43,6 +41,6 @@ def gethms(totalSeconds):
 
 
 def faster(seconds, speed):
-    # TODO get for various speeds
-    
-    return seconds
+    reqtime = seconds / speed
+    reqtime = gethms(reqtime)
+    return reqtime
