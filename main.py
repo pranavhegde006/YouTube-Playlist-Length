@@ -7,8 +7,9 @@ import youtubeTime
 load_dotenv()
 api_key = os.environ['api_key']
 
-vid_len = []
+
 def playlistLength(link):
+    vid_len = []
     if '=' in link:
         link = link[link.index('=')+1:]
     youtubeService = build('youtube', 'v3', developerKey = api_key)
