@@ -121,7 +121,7 @@ def form_post():
     number = time['n']
     time = f"{time['h']} hours, {format(time['m'], '02d')} minutes and {format(time['s'], '02d')} seconds"
     final = f"This playlist has {number} videos."
-    final2 = f"It would take you exactly {time} to watch this playlist at {speed}x speed."
+    final2 = f"It would take you exactly {time} to watch the entire playlist at {speed}x speed."
     return render_template('index.html', final = final, final2 = final2)
 
 
