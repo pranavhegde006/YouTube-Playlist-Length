@@ -19,7 +19,9 @@ def form_post():
     time = faster(time1x, speed)
     number = time['n']
     time = f"{time['h']} hours, {format(time['m'], '02d')} minutes and {format(time['s'], '02d')} seconds"
-    return render_template('index.html', time = time, number = number, speed = speed)
+    final = f"This playlist has {number.bold} videos."
+    final2 = f"It would take you exactly {time} to watch this playlist at {speed}x speed."
+    return render_template('index.html', final = final, final2 = final2)
 
 
 @app.errorhandler(404)

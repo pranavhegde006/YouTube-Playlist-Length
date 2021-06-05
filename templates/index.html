@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>YouTube Playlist calc</title>
+        <title>YouTube Playlist length</title>
         <link rel="icon" href='./../static/assets/youtube.svg' type="image/gif" sizes="20x20">
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/hello.css') }}">
     </head>
     <body>
         <div class='header'>
@@ -15,7 +15,7 @@
         </div>
         <div class="content">
                 <form action='/' method="POST">
-                    <label id="label" for='link'>Enter the playlist link or ID: </label><br/>
+                    <label id="label" for='link'>Enter the playlist link or ID to calculate it's length: </label><br/>
                     <input id='search-box' type="text" name='link' placeholder="https://youtube.com/playlist?list=ID"><br/>
                     <label id="label" for="speed">Playback speed:</label>
                     <select id="speed" name="speed">
@@ -31,8 +31,9 @@
         
                 <br/>
                 <div class="result">
-                    This playlist has about <b>{{number}}</b> videos.<br/>
-                    It would take you exactly <b>{{time}}</b> to watch this playlist at <b>{{speed}}x</b> speed.
+                    {{final}}
+                    <br/>
+                    {{final2}}
                 </div>
                 <br/>
                 <br/><br/>
@@ -45,3 +46,5 @@
         </footer>
     </body>
 </html>
+
+
