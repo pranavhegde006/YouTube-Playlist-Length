@@ -23,7 +23,8 @@ def playlistLength(link):
             pageToken = nextPageToken
         )
         pl_response = pl_request.execute()
-
+        if 'error' in pl_response:
+            return -1
         videos = []
         for item in pl_response['items']:
             videos.append(item['contentDetails']['videoId'])
@@ -57,5 +58,6 @@ def faster(hms, speed):
     seconds = youtubeTime.getSeconds(int(hms['h']), int(hms['m']), int(hms['s']))
     reqtime = seconds / speed
     reqtime = youtubeTime.gethms(reqtime)
+    reqtime['n'] = hms['n']
     return reqtime
     
