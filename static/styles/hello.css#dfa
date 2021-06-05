@@ -1,0 +1,35 @@
+#search-box {
+    border-radius: 5px;
+    width: 400px;
+    height: 1.5rem;
+    background-color: #f2f2f2;
+}
+
+.header .right {
+    float: right;
+}
+
+.header .left {
+    float: left;
+}
+
+.header .right .small {
+    font-size: 0.5rem;
+}
+
+body {
+    font-size: 1.5rem;
+    padding: 1%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+}
+
+.button {
+    background-color: rgb(0, 122, 255);
+    border-radius: 10px;
+}
+
+.content {
+  max-width: 700px;
+  margin: auto;
+}

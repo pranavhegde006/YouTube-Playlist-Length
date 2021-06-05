@@ -58,5 +58,4 @@ def faster(hms, speed):
     reqtime = seconds / speed
     reqtime = youtubeTime.gethms(reqtime)
     return reqtime
-
-print(playlistLength('PLQVvvaa0QuDf2JswnfiGkliBInZnIC4HL'))
+    

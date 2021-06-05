@@ -2,10 +2,82 @@
 <html>
     <head>
         <title>YouTube Playlist calc</title>
+        <link rel="icon" href='./../static/assets/youtube.svg' type="image/gif" sizes="20x20">
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/hello.css#dfa') }}"> -->
+        <style>
+            #search-box {
+                border-radius: 5px;
+                width: 400px;
+                height: 1.5rem;
+                background-color: #f2f2f2;
+            }
+
+            .header .right {
+                float: right;
+            }
+
+            .header .left {
+                float: left;
+            }
+
+            .header .right .small {
+                font-size: 0.5rem;
+            }
+
+            body {
+                font-size: 1.5rem;
+                padding: 1%;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                background-color: white;
+            }
+
+            .button {
+                background-color: rgb(0, 122, 255);
+                border-radius: 10px;
+            }
+
+            .content {
+                font-size: 1.5rem;
+                max-width: 700px;
+                margin: auto;
+            }
+
+        </style>
     </head>
     <body>
-        Hey there!</br>
-        Welcome to my YouTube playlist length calculator.
-        Click <a href="/form">this</a> to go to the YouTube playlist length calculator.
+        <div class='header'>
+            <span class="left" href='/'><a href="/"><img src='./../static/assets/logo.png' height="70"></a></span>
+            <span class="right"><a href="https://github.com/pranavhegde006/YouTube-playlist-length"><img src="./../static/assets/github.svg" height="50"></a></br><span class="small">I need to learn CSS real bad :p</span></span>
+        </div>
+        </br>
+        <br/>
+        <div class="content">
+                <img src="./../static/assets/4.jpg" width="400">
+            
+                <form action='/' method="POST">
+                    <label for='link'>Enter the playlist link or ID: </label><br/>
+                    <input id='search-box' type="text" name='link' placeholder="https://youtube.com/?list=ID"><br/>
+                    <label for="cars">Playback speed:</label>
+                    <select id="speed" name="speed">
+                        <option value=1>1x</option>
+                        <option value=1.25>1.25x</option>
+                        <option value=1.5>1.5x</option>
+                        <option value=1.75>1.75x</option>
+                        <option value=2>2x</option>
+                    </select> 
+                    <button type="submit" class='button'>Calculate length!</button>
+                </form>
+        
+                <br/>
+                {{time}}
+                <br/>
+        </div>
+        
+
+
+        <footer>
+            Built in public interest by <a href="https://github.com/pranavhegde006">Pranav Hegde</a>.
+        </footer>
     </body>
 </html>
+

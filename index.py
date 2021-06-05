@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from main import *
 
 app = Flask(__name__)
@@ -7,16 +7,19 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/form')
-def form():
-    return render_template('form.html')
-
-@app.route('/form', methods=['POST'])
+@app.route('/', methods=['POST'])
 def form_post():
     link = request.form['link']
     time = playlistLength(link)
-    time = f"There are a total of {time['n']} videos in this playlist. \nIt would take you {time['h']} hours, {time['m']} minutes and {time['s']} seconds to watch the complete playlist."
-    return render_template('time.html', time = time)
+    number = time['n']
+    time = f"{time['h']} hours, {format(time['m'], '02d')} minutes and {format(time['s'], '02d')} seconds"
+    return render_template('index.html', time = time)
+
+
+
+@app.route('/youtube.svg') 
+def favicon(): 
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'youtube.svg', mimetype='image/svg+xml')
 
 if __name__ == '__main__':
     app.run(debug=True)
