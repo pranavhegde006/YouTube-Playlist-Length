@@ -3,7 +3,7 @@
     <head>
         <title>YouTube Playlist length</title>
         <link rel="icon" href='./../static/assets/youtube.svg' type="image/gif" sizes="20x20">
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles/hello.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     </head>
     <body>
         <div class='header'>
@@ -11,9 +11,12 @@
             <span class="right"><a href="https://github.com/pranavhegde006/YouTube-playlist-length"><img src="./../static/assets/github.svg" height="50"></a></br></span>
         </div>
         <div class="space">
-            <br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/>
         </div>
         <div class="content">
+                <center>
+                    <img class="image-yt" src="./../static/assets/1.jpg" width="500px">
+                </center>
                 <form action='/' method="POST">
                     <label id="label" for='link'>Enter the playlist link or ID to calculate it's length: </label><br/>
                     <input id='search-box' type="text" name='link' placeholder="https://youtube.com/playlist?list=ID"><br/>
@@ -36,11 +39,7 @@
                     {{final2}}
                 </div>
                 <br/>
-                <br/><br/>
-        </div><br/>
-        <br/>
-        <br/>
-        <br/>
+        </div>
         <footer>
             Built in public interest by <a href="https://github.com/pranavhegde006">Pranav Hegde</a>.
         </footer>
