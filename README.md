@@ -1,6 +1,6 @@
-# YouTube Playlist Length 
-<img src="https://www.cmatrust.co.uk/wp-content/uploads/2020/05/YouTube-logo.jpg" width='100px'>
+# YouTube Playlist Length
 
+<img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png" width='100px'>
 
 The <a href="http://prh.codes">YouTube Playlist Length web app</a> lets you find out the exact time required to watch a YouTube playlist at various playback speeds.
 
