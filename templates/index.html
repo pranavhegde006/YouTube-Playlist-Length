@@ -18,15 +18,17 @@
                     <img class="image-yt" src="./../static/assets/1.jpg" width="500px">
                 </center>
                 <form action='/' method="POST">
+                    <label id="error">{{error}}</label>
+                    </br>
                     <label id="label" for='link'>Enter the playlist link or ID to calculate it's length: </label><br/>
-                    <input id='search-box' type="text" name='link' placeholder="https://youtube.com/playlist?list=ID"><br/>
+                    <input id='search-box' value="{{link}}" type="text" name='link' placeholder="https://youtube.com/playlist?list=ID"><br/>
                     <label id="label" for="speed">Playback speed:</label>
-                    <select id="speed" name="speed">
-                        <option value=1>1x</option>
-                        <option value=1.25>1.25x</option>
-                        <option value=1.5>1.5x</option>
-                        <option value=1.75>1.75x</option>
-                        <option value=2>2x</option>
+                    <select id="speed" name="speed" value='{{ selection }}'>
+                        <option {{ "selected='selected'" if selection == 1    else "" }} value=1   >1x   </option>
+                        <option {{ "selected='selected'" if selection == 1.25 else "" }} value=1.25>1.25x</option>
+                        <option {{ "selected='selected'" if selection == 1.5  else "" }} value=1.5 >1.5x </option>
+                        <option {{ "selected='selected'" if selection == 1.75 else "" }} value=1.75>1.75x</option>
+                        <option {{ "selected='selected'" if selection == 2    else "" }} value=2   >2x   </option>
                     </select> 
                     </br>
                     <button type="submit" class='button'>Calculate length!</button>
@@ -45,5 +47,3 @@
         </footer>
     </body>
 </html>
-
-
