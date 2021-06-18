@@ -21,7 +21,7 @@
                     <label id="error">{{error}}</label>
                     </br>
                     <label id="label" for='link'>Enter the playlist link or ID to calculate it's length: </label><br/>
-                    <input id='search-box' value="{{link}}" type="text" name='link' placeholder="https://youtube.com/playlist?list=ID"><br/>
+                    <input id='search-box' value="{{link}}" type="text" name='link' placeholder="https://youtube.com/playlist?list=ID" required><br/>
                     <label id="label" for="speed">Playback speed:</label>
                     <select id="speed" name="speed" value='{{ selection }}'>
                         <option {{ "selected='selected'" if selection == 1    else "" }} value=1   >1x   </option>
