@@ -52,6 +52,8 @@ def gethms(totalSeconds):
 
 
 def playlistLength(link):
+    if not link:
+        return -1
     vid_len = []
     if '=' in link:
         link = link[link.index('=')+1:]
@@ -116,13 +118,13 @@ def form_post():
     speed = float(request.form['speed'])
     time1x = playlistLength(link)
     if time1x == -1:
-        return render_template('404.html')
+        return render_template('index.html', error="Incorrect Playlist link...", link=link)
     time = faster(time1x, speed)
     number = time['n']
     time = f"{time['h']} hours, {format(time['m'], '02d')} minutes and {format(time['s'], '02d')} seconds"
     final = f"This playlist has {number} videos."
     final2 = f"It would take you exactly {time} to watch the entire playlist at {speed}x speed."
-    return render_template('index.html', final = final, final2 = final2)
+    return render_template('index.html', final = final, final2 = final2, link = link, selection = speed)
 
 
 @app.route('/youtube.svg') 
