@@ -1,13 +1,4 @@
-<style type="text/css">
-    #image-right {
-        position: absolute;
-        right: 0;
-        top: 0;
-        display: block;
-        float: right;
-    }
-</style>
-# YouTube Playlist Length <img id="image-right" src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png">
+# YouTube Playlist Length <img align="right" src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png" height="40px"/>
 
 The <a href="https://youtube-length.herokuapp.com/">YouTube Playlist Length web app</a> lets you find out the exact time required to watch a YouTube playlist at various playback speeds.
 
