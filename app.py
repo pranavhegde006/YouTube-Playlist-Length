@@ -52,24 +52,33 @@ def gethms(totalSeconds):
 
 
 def playlistLength(link):
-    if not link:
+    global errorString
+    if not link:        
+        errorString = "Please enter a non empty link..."
         return -1
+
     vid_len = []
+    
     if '=' in link:
         link = link[link.index('=')+1:]
+    
     youtubeService = build('youtube', 'v3', developerKey = api_key)
-
     nextPageToken = None
+    
     while True:
-        pl_request = youtubeService.playlistItems().list(
-            part = 'contentDetails',
-            playlistId = link,
-            maxResults = 500,
-            pageToken = nextPageToken
-        )
-        pl_response = pl_request.execute()
-        if 'error' in pl_response:
+        try:
+            pl_request = youtubeService.playlistItems().list(
+                part = 'contentDetails',
+                playlistId = link,
+                maxResults = 500,
+                pageToken = nextPageToken
+            )
+            pl_response = pl_request.execute()
+        # TODO: Show the error obtained rather than the hardcoded string below
+        except:            
+            errorString = "Invalid Playlist link/ID. Please enter a publicly visible Playlist link..."
             return -1
+
         videos = []
         for item in pl_response['items']:
             videos.append(item['contentDetails']['videoId'])
@@ -118,7 +127,7 @@ def form_post():
     speed = float(request.form['speed'])
     time1x = playlistLength(link)
     if time1x == -1:
-        return render_template('index.html', error="Incorrect Playlist link...", link=link)
+        return render_template('index.html', error=errorString, link=link)
     time = faster(time1x, speed)
     number = time['n']
     time = f"{time['h']} hours, {format(time['m'], '02d')} minutes and {format(time['s'], '02d')} seconds"
